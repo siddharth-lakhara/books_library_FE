@@ -1,0 +1,18 @@
+.App-Container {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  font: helvetica;
+}
+
+.App-Container > * {
+  font: Helvetica;
+}
+
+.App-rightPane {
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+    box-sizing: border-box;
+}

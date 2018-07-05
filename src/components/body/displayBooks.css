@@ -1,0 +1,21 @@
+.displayBook-cardContainer{
+    background-color:orange;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    padding: 40px;
+    max-width: 1550px;;
+}
+
+.displayBook-author {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: 100px;
+    height: 100px;
+    font-size: 200%;
+    font-weight: lighter;
+    margin-left: 50px;
+    padding-bottom: 1%;
+}

@@ -1,0 +1,25 @@
+.header-main {
+    background: #944744;
+    color: white;
+    padding: 10px;
+    width: 28%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    font: "helvetica";
+    border-bottom-right-radius: 20px;
+    text-align: center;
+}
+
+.header-book {
+    font-size: 255%;
+}
+
+.header-the, .header-shelf {
+    font-size: 180%;
+}
+
+.header-hr {
+    border-color: #BF9392;
+    size: "400";
+    width: 80%;
+}

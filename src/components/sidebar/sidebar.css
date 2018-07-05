@@ -1,0 +1,28 @@
+.sideBar {
+    width: 100px;
+    background-color: dimgray; 
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-size: 250%;
+    padding-left: 5px; 
+    justify-content: space-between;
+    /* position: fixed; */
+}
+
+.sidebar-settings {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: -30%;
+}
+
+.material-icons {
+    font-size: 30px;
+}
+
+.sideBar-text {
+    text-align: center;
+    font-weight: bold;
+}
