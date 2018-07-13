@@ -13,10 +13,14 @@ class BookCard extends React.Component {
   handleLikes(event) {
     const [likes, booksId] = event.target.id.split(',');
     const likeStatus = Number(likes);
-    this.props.toggleLikes(booksId);
     const color = likeStatus === 1 ? 'grey' : 'red';
-    fetch(`/like/${booksId}`).then(() => {
-      this.setState({ color });
+    fetch(`/like/${booksId}`).then((res) => {
+      if (res.status === 200) {
+        this.setState({ color });
+        this.props.toggleLikes(booksId);
+      } else {
+        window.alert('Please check your network connection');
+      }
     });
   }
 
