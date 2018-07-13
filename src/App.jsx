@@ -12,6 +12,8 @@ class App extends React.Component {
       booksStorage: {},
     };
     this.loadBooks = this.loadBooks.bind(this);
+    this.updateBooks = this.updateBooks.bind(this);
+    this.toggleLikes = this.toggleLikes.bind(this);
   }
 
   componentDidMount() {
@@ -22,7 +24,6 @@ class App extends React.Component {
     fetch('/fetch')
       .then(response => response.json())
       .then((booksStorage) => {
-        console.log('response: ', booksStorage);
         this.setState({ booksStorage });
       });
   }
@@ -33,26 +34,39 @@ class App extends React.Component {
     });
   }
 
+  toggleLikes(bookId) {
+    const { booksStorage } = this.state;
+    booksStorage.reduce((prev, curr, index) => {
+      if (curr.bookId === Number(bookId)) {
+        curr.like = curr.like === 1 ? 0 : 1;
+        booksStorage[index] = curr;
+      }
+      return {};
+    }, {});
+    this.setState({ booksStorage });
+  }
+
   render() {
     const { booksStorage } = this.state;
     if (Object.keys(booksStorage).length === 0) {
       return (
         <div className="App-Container">
-          <SideBar updateBooks={updateBooks} />
+          <SideBar updateBooks={this.updateBooks} />
           <div className="App-rightPane">
             <Header />
-            <NoBooksPage updateBooks={updateBooks} />
+            <NoBooksPage updateBooks={this.updateBooks} />
           </div>
         </div>
       );
     }
     return (
       <div className="App-Container">
-        <SideBar updateBooks={updateBooks} />
+        <SideBar updateBooks={this.updateBooks} />
         <div className="App-rightPane">
           <Header />
           <Books
-            booksStorage={this.state.booksStorage}
+            booksStorage={booksStorage}
+            toggleLikes={this.toggleLikes}
           />
         </div>
       </div>

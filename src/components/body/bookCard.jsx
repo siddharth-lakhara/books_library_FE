@@ -11,15 +11,19 @@ class BookCard extends React.Component {
   }
 
   handleLikes(event) {
-    const [likes, books_id, author] = event.target.id.split(',');
+    const [likes, booksId] = event.target.id.split(',');
     const likeStatus = Number(likes);
-    const color = likeStatus === 1 ? 'grey':'red';
-    fetch(`/like/${booksId}`).then(()=>{
+    this.props.toggleLikes(booksId);
+    const color = likeStatus === 1 ? 'grey' : 'red';
+    fetch(`/like/${booksId}`).then(() => {
       this.setState({ color });
-    })
+    });
   }
 
   render() {
+    const {
+      name, rating, bookId, like, author,
+    } = this.props;
     return (
       <div className="bookcard-main">
         <div className="bookCard-image-container">
@@ -34,13 +38,22 @@ class BookCard extends React.Component {
             className="material-icons"
             style={{ background: this.state.color }}
             onClick={this.handleLikes}
-            id={`${this.props.like},${this.props.bookId},${this.props.author}`}
-          >favorite
+            id={`${like},${bookId}`}
+            role="button"
+            tabIndex={0}
+          >
+            favorite
           </i>
         </div>
-        <div className="bookCard-name">{this.props.Name}</div>
-        <div className="bookCard-rating">{this.props.rating}</div>
-        <div className="bookCard-author">{this.props.author}</div>
+        <div className="bookCard-name">
+          {name}
+        </div>
+        <div className="bookCard-rating">
+          {rating}
+        </div>
+        <div className="bookCard-author">
+          {author}
+        </div>
       </div>
     );
   }

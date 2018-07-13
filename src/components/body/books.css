@@ -1,3 +1,9 @@
 .books-contentsPane {
+    display: flex;
     flex: 1;
+    flex-direction: row;
+    padding-left: 100px;
+    background-color:orange;
+    flex-wrap: wrap;
+    max-width: 100%;
 }

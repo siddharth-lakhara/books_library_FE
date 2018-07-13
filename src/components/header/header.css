@@ -2,12 +2,13 @@
     background: #944744;
     color: white;
     padding: 10px;
-    width: 28%;
+    width: 40%;
     box-sizing: border-box;
     flex-wrap: wrap;
     font: "helvetica";
     border-bottom-right-radius: 20px;
     text-align: center;
+    padding-left: 100px;
 }
 
 .header-book {

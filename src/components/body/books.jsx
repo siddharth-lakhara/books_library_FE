@@ -3,44 +3,33 @@ import BookCard from './bookCard';
 import './books.css';
 import './displayBooks.css';
 
-const AuthorCard = ({ authorBooksArray, author})=>{
-  return (
-    Object.keys(authorBooksArray).map(BookElem => (
-      <BookCard
-        className="bookCard-display"
-        Name={authorBooksArray[BookElem].Name}
-        rating={authorBooksArray[BookElem].rating}
-        like={authorBooksArray[BookElem].like}
-        author={author}
-        bookId={authorBooksArray[BookElem].books_id}
-      />
-    ))
-  );
-}
+const AuthorCard = ({ bookDetails, toggleLikes }) => (
+  <BookCard
+    name={bookDetails.name}
+    rating={bookDetails.rating}
+    like={bookDetails.like}
+    author={bookDetails.author}
+    bookId={bookDetails.bookId}
+    toggleLikes={toggleLikes}
+  />
+);
 
-const DisplayBooks = (booksStorage)=>{
-  return Object.keys(booksStorage).map(authorProp => (
-    <div className="displayBooks-main">
-      <div className="displayBook-author">
-        {authorProp}
-      </div>
-      <div className="displayBook-cardContainer">
-        <AuthorCard
-          authorBooksArray={booksStorage[authorProp]}
-          author={authorProp}
-        />
-      </div>
-    </div>
-  ));
-}
+const DisplayBooks = (booksStorage, toggleLikes) => Object.keys(booksStorage).map(index => (
+  <AuthorCard
+    bookDetails={booksStorage[index]}
+    key={booksStorage[index].bookId}
+    toggleLikes={toggleLikes}
+  />
 
-const Books = ({ booksStorage }) => {
-  retObject = DisplayBooks(booksStorage);
+));
+
+const Books = ({ booksStorage, toggleLikes }) => {
+  const retObject = DisplayBooks(booksStorage, toggleLikes);
   return (
     <div className="books-contentsPane">
       {retObject}
     </div>
   );
-}
+};
 
 export default Books;

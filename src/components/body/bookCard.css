@@ -22,7 +22,6 @@
 } 
 
 .bookCard-image {
-    /* height: 150px; */
     width: 100%;
     object-fit: cover;
     padding: 0px;
@@ -31,7 +30,7 @@
     display:flex;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-    /* background-size: cover; */
+    background-size: cover;
 }
 
 .like-icon {
@@ -66,9 +65,10 @@
 }
 
 .bookCard-image-container{
-    height: 50%;
+    background-size: cover;
     overflow:hidden;
-    width: 100%;
+    /* width: 100%; */
+    /* height: 50%; */
     padding:0;
     margin:0;
 

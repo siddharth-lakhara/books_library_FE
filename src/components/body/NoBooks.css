@@ -4,12 +4,12 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    margin : 100px;
     font-size: 50px;
     flex-wrap: wrap;
     text-align: center;
     display: flex;
     align-items: center;
+    padding-left: 100px;
 }
 .NoBooks-main > div {
     align-items: center;
