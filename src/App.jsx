@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SideBar from './components/sidebar';
 import Header from './components/header';
 import Books from './components/body/books';
 import NoBooksPage from './components/body/NoBooks';
 import './App.css';
 
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,7 +38,7 @@ class App extends Component {
     if (Object.keys(booksStorage).length === 0) {
       return (
         <div className="App-Container">
-          <SideBar />
+          <SideBar updateBooks={updateBooks} />
           <div className="App-rightPane">
             <Header />
             <NoBooksPage updateBooks={updateBooks} />
@@ -48,7 +48,7 @@ class App extends Component {
     }
     return (
       <div className="App-Container">
-        <SideBar />
+        <SideBar updateBooks={updateBooks} />
         <div className="App-rightPane">
           <Header />
           <Books
