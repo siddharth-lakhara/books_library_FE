@@ -4,6 +4,7 @@ Book Library is a simple web application which fetches all the books available i
 ## Useful Links:
 
 BE: https://github.com/siddharth-lakhara/books_library
+
 FE: https://github.com/siddharth-lakhara/books_library_FE
 
 ## Tech Stack
@@ -15,7 +16,7 @@ Front end: ReactJS
 
 ## Usage
 ```
-git clone https://github.com/siddharth-lakhara/books_library.git
+git clone https://github.com/siddharth-lakhara/books_library_FE.git
 npm install
 npm start
 ```
